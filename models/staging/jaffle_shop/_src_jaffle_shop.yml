@@ -15,6 +15,7 @@ sources:
       - name: customers
         columns:
           - name: id
+            description: primary Key for customer data
             data_tests:
               - unique
               - not_null
