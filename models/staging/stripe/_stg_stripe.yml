@@ -1,0 +1,11 @@
+models:
+  - name: stg_stripe__payments
+    description: list of unique payments made through the stripe system
+    columns:
+      - name: payment_id
+        description: primary key
+        data_tests:
+          - unique
+          - not_null
+      - name: payment_status
+        description: "{{ doc('payment_status') }}"
