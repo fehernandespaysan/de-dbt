@@ -63,7 +63,7 @@ models:
       +database: MYDB
       silver:
           +materialized: table
-          schema: silver
+          +schema: silver
       gold:
           +materialized: view
-          schema: gold
+          +schema: gold
