@@ -12,6 +12,11 @@ vars:
    target_db: GLUEDB
    target_schema: PUBLIC
    stage_name: GLUEDB.PUBLIC.GLUE_S3_STAGE
+   wrk_schema: BRONZE
+   file_format_json: MYDB.BRONZE.CSV_FORMAT
+   purge_status: FALSE
+   stage_name_scd2: MYDB.BRONZE.SCD2_DATA_INGEST
+   rawhist_db: MYDB
 
 # These configurations specify where dbt should look for different types of files.
 model-paths: ["models"]
@@ -53,3 +58,12 @@ models:
       mart:
         +materialized: table
         +schema: mart
+      
+    scd2_project:
+      +database: MYDB
+      silver:
+          +materialized: table
+          schema: silver
+      gold:
+          +materialized: view
+          schema: gold
