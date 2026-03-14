@@ -42,5 +42,3 @@ models:
       
     marts:
       +materialized: table
-      snowflake_spend:
-        enabled: true
