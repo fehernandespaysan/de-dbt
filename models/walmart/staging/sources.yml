@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    database: walmart_analytics
+    schema: raw
+    tables:
+      - name: stores_raw
+        description: "Raw store data with store type and size"
+
+      - name: fact_raw
+        description: "Raw weekly store features (temperature, fuel, CPI, etc.)"
+
+      - name: department_raw
+        description: "Raw department-level weekly sales data"
